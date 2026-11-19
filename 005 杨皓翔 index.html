@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>005 杨皓翔</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-size: 18px;
+            font-weight: 400;
+            color: #fff;
+            list-style-type: none;
+            text-decoration: none;
+            box-sizing: border-box;
+            font-family: '微软雅黑';
+            line-height: 60px;
+        }
+        body{
+            background-color: #ff5f5f;
+        }
+        /* 一级盒子：竖向排列 */
+        .yijihezi{
+            width: 120px;
+            margin: 50px 0 0 100px;
+        }
+        .yijiliebiao>li{
+            width: 120px;
+            height: 60px;
+            position: relative;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        .erjihezi{
+            position: absolute;
+            left:120px;
+            top:0;
+            background-color: rgb(255 255  255 / 0.8);
+            padding: 0;
+            width: 0;
+            overflow: hidden;
+            transition: all 300ms linear;
+        }
+        .erjihezi a{
+            color: black;
+            font-size: 16px;
+            line-height: 40px;
+        }
+        .erjiliebiao>li{
+            width: 120px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+        }
+        /* hover 横向展开，宽度变大 */
+        .yijiliebiao>li:hover .erjihezi{
+            width: 360px;
+            padding: 10px 0;
+        }
+        .yijiliebiao>li>a::after{
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 120px;
+            height: 0;
+            background-color: #bb1313;
+            z-index: -1;
+            transition: all 300ms linear;
+        }
+        .yijiliebiao>li:hover a::after{
+            height: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="yijihezi">
+        <ul class="yijiliebiao">
+            <li>
+                <a href="#">学校概况</a>
+                <div class="erjihezi">
+                    <ul class="erjiliebiao">
+                        <li><a href="#">学校简介</a></li>
+                        <li><a href="#">历史沿革</a></li>
+                        <li><a href="#">校园风光</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="#">机构设置</a>
+                <div class="erjihezi">
+                    <ul class="erjiliebiao">
+                        <li><a href="#">教学科研机构</a></li>
+                        <li><a href="#">职能部门</a></li>
+                        <li><a href="#">附属单位</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a href="#">教育教学</a>
+                <div class="erjihezi">
+                    <ul class="erjiliebiao">
+                        <li><a href="#">本科教育</a></li>
+                        <li><a href="#">实践教学</a></li>
+                        <li><a href="#">师资队伍</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
